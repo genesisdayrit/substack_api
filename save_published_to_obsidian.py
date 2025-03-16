@@ -8,11 +8,11 @@ import html2text
 load_dotenv()
 
 # Retrieve environment variables (use placeholders in your repo; actual values in your local .env file)
-subdomain = os.getenv("USER_SUBSTACK_SUBDOMAIN")  # e.g., "your_subdomain"
+subdomain = os.getenv("USER_SUBSTACK_SUBDOMAIN")
 if not subdomain:
     raise ValueError("USER_SUBSTACK_SUBDOMAIN is not set in the environment variables.")
 
-obsidian_path = os.getenv("OBSIDIAN_DESTINATION_PATH")  # e.g., "/path/to/your/obsidian/vault"
+obsidian_path = os.getenv("OBSIDIAN_DESTINATION_PATH") 
 if not obsidian_path:
     raise ValueError("OBSIDIAN_DESTINATION_PATH is not set in the environment variables.")
 
@@ -21,8 +21,8 @@ def extract_title_from_url(url):
     Extract a human-friendly title from a Substack post URL.
     
     Example:
-      Input: "https://example.substack.com/p/daily-posts-experiment-pt-2"
-      Output (fallback): "Daily Posts Experiment Pt 2"
+      Input: "https://example.substack.com/p/example-post-name"
+      Output (fallback): "Example Post Name"
     """
     parts = url.split('/p/')
     if len(parts) > 1:
